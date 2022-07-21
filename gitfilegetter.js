@@ -2,30 +2,38 @@ const { Octokit } = require("@octokit/rest");
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 const fs = require('fs');
-//const config = require("./config.json");
 
-
-/*
 const octokit = new Octokit({
-  auth: 'personal-access-token123'
-});
-*/
-//var dict1 = {};
-
-//dict1 = Octokit.request('Ge')
-
-/* Get JSON from github and show first 2 elements*/
-var dict = {};
-dict = Octokit.request('GET /repos/{owner}/{repo}/contents/{path}',{
-  owner: 'Ericdequ',
-  repo: 'GetExtension',
-  path: 'Scrapping/BeautifulSoup/CMS/CMSdata.json'
+  auth: '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'
 });
 
+(async () => {
+
+const { data: pullRequest } = octokit.rest.pulls.get({
+    owner: "Ericdequ",
+    repo: "GetExtension",
+    path: "Scrapping/BeautifulSoup/CMS/CMSdata.json",
+    pull_number: 1,
+  });
+  
+  
+  const { data: diff } = octokit.rest.pulls.get({
+    owner: "Ericdequ",
+    repo: "GetExtension",
+    pull_number: 123,
+    mediaType: {
+      format: "json",
+    },
+  });
+
+  console.log(octokit.request("GET /Ericdequ/GetExtension/Scrapping/BeautifulSoup/CMSdata.json"));
+
+});
 
 
-const jsonString = JSON.stringify(dict);
-console.log(jsonString);
+
+
+
 
 
 
