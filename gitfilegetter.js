@@ -13,6 +13,6 @@ await octokit.request('GET /repos/{owner}/{repo}/contents/{path}',{
     owner: 'EricDequ',
     repo: 'GetExtension',
     path: 'GetExtension/Scrapping/BeautifulSoup/CMS/CMSdata.json'
-})
+});
 
 
