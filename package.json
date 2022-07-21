@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "octokit": "^2.0.4"
+    "12": "^1.0.2",
+    "octokit": "^2.0.4",
+    "package.json": "^0.0.0"
   }
 }
