@@ -5,7 +5,7 @@
     "options_page": "options.html",
     "manifest_version": 3,
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js", "service_worker": "index.js"
     },
     "permissions": ["storage", "activeTab", "scripting"],
     "action": {
@@ -30,6 +30,14 @@
                 "mac": "MacCtrl+Shift+F"
             },
             "description": "Opens popup.html"
+        },
+
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+D",
+                "mac": "MacCtrl+Shift+D"
+            },
+            "description": "Opens index.html"
         }
     }
 }
